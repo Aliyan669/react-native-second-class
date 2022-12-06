@@ -1,13 +1,18 @@
-import React from 'react'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Product from './singleProduct';
+import Api_data from './screens/api_data';
 
-import Login from './screens/login'
-import Signup from './screens/signup'
+const Stack = createNativeStackNavigator();
 
-export default function App() {
+function App() {
   return (
-
-
- <Signup /> 
-
-  )
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Product" component={Api_data} />
+        <Stack.Screen name="Detail" component={Product} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
+export default App;
